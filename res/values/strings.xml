@@ -2,7 +2,33 @@
 <resources>
 
     <string name="app_name">Philips Remote</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    <string name="button_off">off</string>
+    <string name="button_list">list</string>
+    <string name="button_up">UP</string>
+    <string name="button_info">info</string>
+    <string name="buton_left">LEFT</string>
+    <string name="button_ok">OK</string>
+    <string name="button_right">RIGHT</string>
+    <string name="button_exit">exit</string>
+    <string name="button_down">DOWN</string>
+    <string name="button_options">options</string>
+    <string name="button_volume_down">Vol-</string>
+    <string name="button_volume_up">Vol+</string>
+    <string name="button_channel_down">Ch-</string>
+    <string name="button_channel_up">Ch+</string>
+    
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_0">0</string>
+    
 
 </resources>
