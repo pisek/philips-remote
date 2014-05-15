@@ -2,10 +2,15 @@ package com.example.philipsremote;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+	
+	private static final String TAG = "MainActivity";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +18,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 	}
 
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -31,6 +38,18 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void clickButton(View view) {
+		
+		if (!(view instanceof Button)) {
+			Log.e(TAG, "Given view is not a Button");
+		}
+		
+//		Button b = (Button) view;
+		
+		
+		
 	}
 
 }

@@ -10,13 +10,26 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.philipsremote.fragments.MainFragment" >
 
+    <EditText
+        android:id="@+id/ip_address"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ems="10"
+        android:text="@string/ip_address_default" >
+		
+        <requestFocus />
+    </EditText>
+
     <Button
-        android:id="@+id/button_on"
+        android:id="@+id/button_off"
         android:width="@dimen/button_default_size"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_off" />
+        android:text="@string/button_off"
+        android:onClick="clickButton" />
 
     <fragment
         android:id="@+id/fragment_navigation"

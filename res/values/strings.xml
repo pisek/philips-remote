@@ -15,6 +15,7 @@
     <string name="button_down">DOWN</string>
     <string name="button_options">options</string>
     <string name="button_volume_down">Vol-</string>
+    <string name="button_volume_mute">mute</string>
     <string name="button_volume_up">Vol+</string>
     <string name="button_channel_down">Ch-</string>
     <string name="button_channel_up">Ch+</string>
@@ -29,6 +30,8 @@
     <string name="button_8">8</string>
     <string name="button_9">9</string>
     <string name="button_0">0</string>
+    
+    <string name="ip_address_default">192.168.</string>
     
 
 </resources>
