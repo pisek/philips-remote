@@ -12,7 +12,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.philipsremote.utils.Utils;
@@ -48,9 +47,12 @@ public class MainActivity extends Activity {
 	
 	public void clickButton(View view) {
 		
-		if (!(view instanceof Button)) {
-			Log.e(TAG, "Given view is not a Button");
+		if (!(view instanceof PhilipsButton)) {
+			Log.e(TAG, "Given view is not a PhilipsButton");
 		}
+		
+		PhilipsButton b = (PhilipsButton) view;
+		Log.d(TAG, "PhilipsButton("+b.getJsonKey()+") pressed");
 		
 		TextView ip = (TextView) findViewById(R.id.ip_address);
 		String uri = "http://"+ip.getText()+":1925/1/input/key";
@@ -59,7 +61,7 @@ public class MainActivity extends Activity {
 
 		JSONObject json = new JSONObject();
 		try {
-			json.put("key", "VolumeUp");
+			json.put("key", b.getJsonKey());
 		} catch (JSONException e) {
 			Log.e(TAG, "Could not put values to JSONObject", e);
 			return;

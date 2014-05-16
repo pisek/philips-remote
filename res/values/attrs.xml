@@ -1,0 +1,5 @@
+<resources>
+   <declare-styleable name="PhilipsButton">
+       <attr name="json_key" format="string" />
+   </declare-styleable>
+</resources>

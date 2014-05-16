@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:philips="http://schemas.android.com/apk/res-auto"
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -22,14 +23,15 @@
         <requestFocus />
     </EditText>
 
-    <Button
+    <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_off"
         android:width="@dimen/button_default_size"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_off"
-        android:onClick="clickButton" />
+        android:onClick="clickButton"
+        philips:json_key="Standby" />
 
     <fragment
         android:id="@+id/fragment_navigation"
