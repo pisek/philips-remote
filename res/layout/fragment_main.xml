@@ -29,15 +29,19 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fragmrnts_default_margin_bottom"
         android:text="@string/button_off"
         android:onClick="clickButton"
-        philips:json_key="Standby" />
+        philips:json_key="Standby"
+        android:textColor="@color/main_color"
+        android:background="@drawable/custom_button" />
 
     <fragment
         android:id="@+id/fragment_navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/fragmrnts_default_margin_bottom"
         class="com.example.philipsremote.fragments.NavigationFragment"
         tools:layout="@layout/fragment_navigation" />
     
@@ -46,6 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/fragmrnts_default_margin_bottom"
         class="com.example.philipsremote.fragments.ChannelVolumeFragment"
         tools:layout="@layout/fragment_channel_volume" />
     
@@ -54,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/fragmrnts_default_margin_bottom"
         class="com.example.philipsremote.fragments.NumbersFragment"
         tools:layout="@layout/fragment_numbers" />
 

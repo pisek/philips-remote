@@ -1,0 +1,15 @@
+<resources>    
+    
+    <color name="main_color">#FFF</color>
+    <color name="main_background_color">#333</color>
+    <color name="button_stroke_color">#FFF</color>
+    <color name="button_background_color1">#800080</color>
+    <color name="button_background_color2">#380038</color>
+    <color name="button_background_pressed_color1">#3d003d</color>
+    <color name="button_background_pressed_color2">#240024</color>
+    <color name="button_background_checked_color1">#d600d6</color>
+    <color name="button_background_checked_color2">#a800a8</color>
+    <color name="button_background_focused_color1">#3d003d</color>
+    <color name="button_background_focused_color2">#240024</color>
+    
+</resources>

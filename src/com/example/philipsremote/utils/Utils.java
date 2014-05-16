@@ -47,33 +47,45 @@ public final class Utils {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (IllegalArgumentException e) {
+				Log.e(TAG, "Wrong IP address?");
+				e.printStackTrace();
 			}
 			return null;
 		}
 		
 	}
 
-	public static JSONObject executeJSONRequest(HttpClient client, HttpRequest request) {
+	public static JSONObject executeJSONRequest(HttpClient client, HttpRequest request, boolean returnJsonResponse) {
 		
 		try {
 			
-			HttpResponse response = new HttpRequestTask().execute(client, request).get(HTTP_TIMEOUT, TimeUnit.MILLISECONDS);
+			HttpRequestTask task = new HttpRequestTask();
+			task.execute(client, request);
 			
-			StatusLine statusLine = response.getStatusLine();
-			int statusCode = statusLine.getStatusCode();
-			if (statusCode == 200) {
+			if (returnJsonResponse) {
+			
+				HttpResponse response = task.get(HTTP_TIMEOUT, TimeUnit.MILLISECONDS);
 				
-				if (response.getEntity() != null) {
-					return Utils.parseJsonObject(response.getEntity().getContent());
+				StatusLine statusLine = response.getStatusLine();
+				int statusCode = statusLine.getStatusCode();
+				if (statusCode == 200) {
+					
+					if (response.getEntity() != null) {
+						return Utils.parseJsonObject(response.getEntity().getContent());
+					} else {
+						Log.d(TAG, "No response provided");
+						return new JSONObject();
+					}
+					
 				} else {
-					Log.d(TAG, "No response provided");
-					return new JSONObject();
+					
+					Log.e(TAG, "Http response status: "+statusCode+" - "+statusLine.getReasonPhrase());
+					
 				}
 				
 			} else {
-				
-				Log.e(TAG, "Http response status: "+statusCode+" - "+statusLine.getReasonPhrase());
-				
+				return new JSONObject();
 			}
 
 		} catch (InterruptedException e) {

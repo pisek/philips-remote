@@ -19,12 +19,16 @@ import com.example.philipsremote.utils.Utils;
 public class MainActivity extends Activity {
 	
 	private static final String TAG = "MainActivity";
+	private static MainActivity INSTANCE;
+
 	private HttpClient client;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		MainActivity.INSTANCE = this;
 		
 		client = new DefaultHttpClient();
 		client.getParams().setParameter("http.socket.timeout", Utils.HTTP_TIMEOUT);
@@ -69,7 +73,7 @@ public class MainActivity extends Activity {
 		
 		
 		HttpRequest request = new JSONRequestBuilder().method(JSONRequestBuilder.HttpMethod.POST).uri(uri).jsonObject(json).build();
-		JSONObject jsonObject = Utils.executeJSONRequest(client, request);
+		JSONObject jsonObject = Utils.executeJSONRequest(client, request, false);
 		
 		if (jsonObject == null) {
 			Log.e(TAG, "JSONObject is null. Something went wrong.");
@@ -78,6 +82,10 @@ public class MainActivity extends Activity {
 		
 		Log.i(TAG, jsonObject.toString());
 		
+	}
+	
+	public static MainActivity getInstance() {
+		return INSTANCE;
 	}
 	
 }
