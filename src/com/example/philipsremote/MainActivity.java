@@ -7,6 +7,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -22,6 +24,8 @@ public class MainActivity extends Activity {
 	private static MainActivity INSTANCE;
 
 	private HttpClient client;
+	private SharedPreferences preferences;
+	private TextView ipAddressTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +34,22 @@ public class MainActivity extends Activity {
 		
 		MainActivity.INSTANCE = this;
 		
+		preferences = this.getPreferences(Context.MODE_PRIVATE);
+		String defaultValue = getString(R.string.ip_address_default);
+		String ipAddress = preferences.getString(getString(R.string.ip_address_key), defaultValue);
+		ipAddressTextView = (TextView) findViewById(R.id.ip_address);
+		ipAddressTextView.setText(ipAddress);
+		
 		client = new DefaultHttpClient();
 		client.getParams().setParameter("http.socket.timeout", Utils.HTTP_TIMEOUT);
+	}
+	
+	@Override
+	protected void onDestroy() {
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(getString(R.string.ip_address_key), ipAddressTextView.getText().toString());
+		editor.commit();
+		super.onDestroy();
 	}
 
 	@Override

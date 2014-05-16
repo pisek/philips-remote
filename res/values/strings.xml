@@ -32,6 +32,6 @@
     <string name="button_0">0</string>
     
     <string name="ip_address_default">192.168.</string>
+    <string name="ip_address_key">IP_ADDRESS</string>
     
-
 </resources>

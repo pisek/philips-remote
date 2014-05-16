@@ -5,15 +5,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:columnCount="3"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/fragments_default_vertical_padding"
+    android:paddingLeft="@dimen/fragments_default_horizontal_padding"
+    android:paddingRight="@dimen/fragments_default_horizontal_padding"
+    android:paddingTop="@dimen/fragments_default_vertical_padding"
     tools:context="com.example.philipsremote.fragments.ChannelVolumeFragment" >
     
     <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_volume_down"
-        android:width="@dimen/button_default_size"
+        android:width="@dimen/button_default_width"
+        android:height="@dimen/button_default_height"
         android:layout_column="0"
         android:layout_row="1"
         android:text="@string/button_volume_down"
@@ -24,7 +25,8 @@
     
     <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_volume_mute"
-        android:width="@dimen/button_default_size"
+        android:width="@dimen/button_default_width"
+        android:height="@dimen/button_default_height"
         android:layout_gravity="center_horizontal"
         android:layout_column="1"
         android:layout_row="1"
@@ -36,7 +38,8 @@
     
     <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_volume_up"
-        android:width="@dimen/button_default_size"
+        android:width="@dimen/button_default_width"
+        android:height="@dimen/button_default_height"
         android:layout_column="2"
         android:layout_row="1"
         android:text="@string/button_volume_up"
@@ -47,7 +50,8 @@
     
     <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_channel_down"
-        android:width="@dimen/button_default_size"
+        android:width="@dimen/button_default_width"
+        android:height="@dimen/button_default_height"
         android:layout_column="0"
         android:layout_row="0"
         android:text="@string/button_channel_down" 
@@ -58,7 +62,8 @@
     
     <com.example.philipsremote.PhilipsButton
         android:id="@+id/button_channel_up"
-        android:width="@dimen/button_default_size"
+        android:width="@dimen/button_default_width"
+        android:height="@dimen/button_default_height"
         android:layout_column="2"
         android:layout_row="0"
         android:text="@string/button_channel_up"
